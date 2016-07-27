@@ -16,6 +16,10 @@ let mapleader = ','
 " color scheme
 set background=dark
 color Tomorrow-Night-Eighties
+if &diff
+    colorscheme distinguished
+endif
+
 
 " status line
 if !exists('g:airline_symbols')
