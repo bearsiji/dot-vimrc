@@ -42,13 +42,13 @@ nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>
 
 " highlight current line
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
+au WinLeave * set cursorline nocursorcolumn
+au WinEnter * set cursorline nocursorcolumn
 set cursorline
 
 " search
 set incsearch
-"set highlight 	" conflict with highlight current line
+set hlsearch
 set ignorecase
 set smartcase
 
