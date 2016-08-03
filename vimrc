@@ -39,10 +39,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "设置切换Buffer快捷键"
 "
-nnoremap <leader>bn :bn
-nnoremap <leader>bp :bp
-" nnoremap <C-N> :bn<CR>
-" nnoremap <C-P> :bp<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
 
 " highlight current line
 au WinLeave * set cursorline nocursorcolumn
