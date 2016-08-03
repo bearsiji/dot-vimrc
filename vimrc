@@ -38,8 +38,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "设置切换Buffer快捷键"
-nnoremap <C-N> :bn<CR>
-nnoremap <C-P> :bp<CR>
+"
+nnoremap <leader>bn :bn
+nnoremap <leader>bp :bp
+" nnoremap <C-N> :bn<CR>
+" nnoremap <C-P> :bp<CR>
 
 " highlight current line
 au WinLeave * set cursorline nocursorcolumn
@@ -122,10 +125,6 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
-
-" tabbar
-let g:Tb_MaxSize = 2
-let g:Tb_TabWrap = 1
 
 hi Tb_Normal guifg=white ctermfg=white
 hi Tb_Changed guifg=green ctermfg=green
