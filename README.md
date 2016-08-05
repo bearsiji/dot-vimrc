@@ -1,4 +1,4 @@
-Maple's Vim config
+My Vim config
 ==================
 
 I use `vundle` to manage my plugins, which makes my `.vim` directory clean and tidy. If you are new to vim, the following two posts
@@ -93,7 +93,6 @@ sudo apt-get install vim-gtk               # Ubuntu
 ## IDE features
 
 * [nerdtree](http://github.com/scrooloose/nerdtree) - A tree explorer plugin for navigating the filesystem.
-* [tabbar](http://github.com/humiaozuzu/TabBar) -  Add tab bar and quickt tab switch with alt+1~9.
 * [tagbar](http://github.com/majutsushi/tagbar) - Displays the tags of the current file in a sidebar.
 * [ack-vim](http://github.com/mileszs/ack.vim) - Front for the Perl module App::Ack.
 * [ctrlp](https://github.com/kien/ctrlp.vim) - Fuzzy file, buffer, mru and tag finder.
