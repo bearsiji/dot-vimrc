@@ -1,5 +1,18 @@
 source ~/.vim/bundles.vim
 
+"jedi-vim config
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = "<leader>c"
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#completions_enabled = 1
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#use_splits_not_buffers = "winwidth"
+
+
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
@@ -200,7 +213,7 @@ smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
@@ -315,3 +328,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+"copy to os clipboard
+vnoremap <C-c> "*y"
+
