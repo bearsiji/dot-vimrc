@@ -23,7 +23,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
 "------ folding -------
-Bundle 'Efficient-python-folding'
+" Bundle 'Efficient-python-folding'
 
 
 "-----------------
@@ -31,6 +31,7 @@ Bundle 'Efficient-python-folding'
 "-----------------
 Bundle 'edsono/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'MattesGroeger/vim-bookmarks'
 
 "--------------
 " Fast editing
@@ -38,6 +39,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'sjl/gundo.vim'
+Bundle 'DoxygenToolkit.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
 

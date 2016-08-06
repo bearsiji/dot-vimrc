@@ -3,14 +3,16 @@ source ~/.vim/bundles.vim
 "jedi-vim config
 let g:jedi#goto_command = "<leader>d"
 let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = ""
+" let g:jedi#goto_definitions_command = ""
 let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
+let g:jedi#usages_command = "<leader>u"
 let g:jedi#completions_command = "<leader>c"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#completions_enabled = 1
-let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = "winwidth"
+let g:jedi#popup_select_first = 1
+
 
 
 " encoding dectection
@@ -49,11 +51,6 @@ let g:airline_theme="luna"
 "我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
-"设置切换Buffer快捷键"
-"
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
 
 " highlight current line
 au WinLeave * set cursorline nocursorcolumn
@@ -176,6 +173,7 @@ if executable('coffeetags')
     \ }
 endif
 
+
 " Nerd Tree
 let NERDChristmasTree=0
 let NERDTreeWinSize=30
@@ -187,8 +185,16 @@ let NERDTreeWinPos = "right"
 
 " nerdcommenter
 let NERDSpaceDelims=1
-" nmap <D-/> :NERDComToggleComment<cr>
+nmap <C-/> :NERDComToggleComment<cr>
 let NERDCompactSexyComs=1
+
+" doxygenToolkit
+let g:doxygenToolkit_authorName="wangzijian"
+let g:doxygenToolkit_briefTag_funcName="yes"
+map <F7>a :DoxAuthor<CR>
+map <F7>f :Dox<CR>
+map <F7>b :DoxBlock<CR>
+map <F7>c O/** */<Left><Left><CR>
 
 " ZenCoding
 let g:user_emmet_expandabbr_key='<C-j>'
@@ -332,3 +338,68 @@ let g:go_highlight_build_constraints = 1
 "copy to os clipboard
 vnoremap <C-c> "*y"
 
+
+highlight BookmarkSign ctermbg=NONE ctermfg=160
+highlight BookmarkLine ctermbg=194 ctermfg=NONE
+let g:bookmark_sign = ''
+let g:bookmark_highlight_lines = 1
+
+" let g:bookmark_no_default_key_mappings = 1
+" nmap <Leader><Leader> <Plug>BookmarkToggle
+" nmap <Leader>i <Plug>BookmarkAnnotate
+" nmap <Leader>a <Plug>BookmarkShowAll
+" nmap <Leader>j <Plug>BookmarkNext
+" nmap <Leader>k <Plug>BookmarkPrev
+" nmap <Leader>c <Plug>BookmarkClear
+" nmap <Leader>x <Plug>BookmarkClearAll
+" nmap <Leader>kk <Plug>BookmarkMoveUp
+" nmap <Leader>jj <Plug>BookmarkMoveDown
+
+
+" Bclose() {{{2
+" delete buffer without closing window
+function! Bclose()
+    let curbufnr = bufnr("%")
+    let altbufnr = bufnr("#")
+
+    if buflisted(altbufnr)
+        buffer #
+    else
+        bnext
+    endif
+
+    if bufnr("%") == curbufnr
+        new
+    endif
+
+    if buflisted(curbufnr)
+        execute("bdelete! " . curbufnr)
+    endif
+endfunction
+
+
+" Mappings to access buffers (don't use "\p" because a
+" delay before pressing "p" would accidentally paste).
+" \l       : list buffers
+" \b \f \g : go back/forward/last-used
+" \1 \2 \3 : go to buffer 1/2/3 etc
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>- :bp<CR>
+nnoremap <Leader>= :bn<CR>
+nnoremap <Leader>e :e#<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+
+let c = 1
+while c <= 99
+  execute "nnoremap " . c . "gb :" . c . "b\<CR>"
+  let c += 1
+endwhile
