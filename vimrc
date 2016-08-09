@@ -98,7 +98,9 @@ autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType python setlocal  expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+
+
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 
@@ -356,27 +358,10 @@ let g:bookmark_highlight_lines = 1
 " nmap <Leader>jj <Plug>BookmarkMoveDown
 
 
-" Bclose() {{{2
-" delete buffer without closing window
-function! Bclose()
-    let curbufnr = bufnr("%")
-    let altbufnr = bufnr("#")
-
-    if buflisted(altbufnr)
-        buffer #
-    else
-        bnext
-    endif
-
-    if bufnr("%") == curbufnr
-        new
-    endif
-
-    if buflisted(curbufnr)
-        execute("bdelete! " . curbufnr)
-    endif
-endfunction
-
+" Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
+nnoremap <silent> <M-F12> :BufExplorer<CR>
+nnoremap <silent> <F12> :bn<CR>
+nnoremap <silent> <S-F12> :bp<CR>
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
@@ -403,3 +388,5 @@ while c <= 99
   execute "nnoremap " . c . "gb :" . c . "b\<CR>"
   let c += 1
 endwhile
+set viminfo^=%
+

@@ -55,6 +55,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Bundle 'scrooloose/syntastic'
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'jlanzarotta/bufexplorer'
 
 "-------------
 " Other Utils
