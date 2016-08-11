@@ -1,3 +1,5 @@
+silent !stty -ixon > /dev/null 2>/dev/null
+
 source ~/.vim/bundles.vim
 
 "jedi-vim config
@@ -198,6 +200,9 @@ map <F7>f :Dox<CR>
 map <F7>b :DoxBlock<CR>
 map <F7>c O/** */<Left><Left><CR>
 
+nmap <C-Q> :q<CR>
+
+
 " ZenCoding
 let g:user_emmet_expandabbr_key='<C-j>'
 
@@ -315,8 +320,8 @@ let g:go_fmt_command = "goimports"
 
 au FileType go nmap <leader>s <Plug>(go-implements)
 au FileType go nmap <leader>i <Plug>(go-info)
-au FileType go nmap <leader>d <Plug>(go-doc)
-au FileType go nmap <leader>v <Plug>(go-doc-vertical)
+" au FileType go nmap <leader>d <Plug>(go-doc)
+" au FileType go nmap <leader>v <Plug>(go-doc-vertical)
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -324,7 +329,7 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <leader>ds <Plug>(go-def-split)
 au FileType go nmap <leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <leader>dt <Plug>(go-def-tab)
-au FileType go nmap <leader>e <Plug>(go-rename)
+au FileType go nmap <leader>rn <Plug>(go-rename)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
