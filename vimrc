@@ -16,7 +16,6 @@ let g:jedi#use_splits_not_buffers = "winwidth"
 let g:jedi#popup_select_first = 1
 
 
-
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
@@ -200,7 +199,8 @@ map <F7>f :Dox<CR>
 map <F7>b :DoxBlock<CR>
 map <F7>c O/** */<Left><Left><CR>
 
-nmap <C-Q> :q<CR>
+nnoremap <C-q> :q<CR>
+nnoremap <C-a> :qa<CR>
 
 
 " ZenCoding
@@ -249,7 +249,6 @@ nmap <F5> :TagbarToggle<cr>
 nmap <F6> :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
-nmap  <D-/> :
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]
 
@@ -278,10 +277,10 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " sublime key bindings
-nmap <D-]> >>
-nmap <D-[> <<
-vmap <D-[> <gv
-vmap <D-]> >gv
+nmap <Leader>] >>
+nmap <Leader>[ <<
+vmap <Leader>[ <gv
+vmap <Leader>] >gv
 
 " eggcache vim
 nnoremap ; :
@@ -348,25 +347,27 @@ vnoremap <C-c> "*y"
 
 highlight BookmarkSign ctermbg=NONE ctermfg=160
 highlight BookmarkLine ctermbg=194 ctermfg=NONE
-let g:bookmark_sign = ''
+" let g:bookmark_sign = ''
 let g:bookmark_highlight_lines = 1
 
 " let g:bookmark_no_default_key_mappings = 1
-" nmap <Leader><Leader> <Plug>BookmarkToggle
-" nmap <Leader>i <Plug>BookmarkAnnotate
-" nmap <Leader>a <Plug>BookmarkShowAll
-" nmap <Leader>j <Plug>BookmarkNext
-" nmap <Leader>k <Plug>BookmarkPrev
-" nmap <Leader>c <Plug>BookmarkClear
-" nmap <Leader>x <Plug>BookmarkClearAll
-" nmap <Leader>kk <Plug>BookmarkMoveUp
-" nmap <Leader>jj <Plug>BookmarkMoveDown
+nmap <F12> <Plug>BookmarkToggle
+nmap <Leader>bi <Plug>BookmarkAnnotate
+nmap <Leader>ba <Plug>BookmarkShowAll
+nmap <Leader>bj <Plug>BookmarkNext
+nmap <Leader>bk <Plug>BookmarkPrev
+nmap <Leader>bc <Plug>BookmarkClear
+nmap <Leader>bx <Plug>BookmarkClearAll
+" nmap <Leader>bkk <Plug>BookmarkMoveUp
+" nmap <Leader>bjj <Plug>BookmarkMoveDown
 
 
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
-nnoremap <silent> <M-F12> :BufExplorer<CR>
-nnoremap <silent> <F12> :bn<CR>
-nnoremap <silent> <S-F12> :bp<CR>
+" nnoremap <F12> :BufExplorer<CR>
+" nnoremap <F12> :bn<CR>
+" nnoremap <S-F12> :bp<CR>
+
+map <F11> :set nohlsearch<CR>
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
@@ -387,6 +388,7 @@ nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
+nnoremap <Leader>` :BufExplorer<CR>
 
 let c = 1
 while c <= 99
