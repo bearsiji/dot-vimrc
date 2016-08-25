@@ -9,7 +9,7 @@ let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>u"
 let g:jedi#completions_command = "<leader>c"
-let g:jedi#rename_command = "<leader>r"
+let g:jedi#rename_command = "<leader>n"
 let g:jedi#completions_enabled = 1
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = "winwidth"
@@ -328,7 +328,7 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <leader>ds <Plug>(go-def-split)
 au FileType go nmap <leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <leader>dt <Plug>(go-def-tab)
-au FileType go nmap <leader>rn <Plug>(go-rename)
+au FileType go nmap <leader>n <Plug>(go-rename)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
@@ -389,11 +389,28 @@ nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 nnoremap <Leader>` :BufExplorer<CR>
+nnoremap <Leader>d1 :1bd<CR>
+nnoremap <Leader>d2 :2bd<CR>
+nnoremap <Leader>d3 :3bd<CR>
+nnoremap <Leader>d4 :4bd<CR>
+nnoremap <Leader>d5 :5bd<CR>
+nnoremap <Leader>d6 :6bd<CR>
+nnoremap <Leader>d7 :7bd<CR>
+nnoremap <Leader>d8 :8bd<CR>
+nnoremap <Leader>d9 :9bd<CR>
+nnoremap <Leader>d0 :10bd<CR>
+
 
 let c = 1
 while c <= 99
   execute "nnoremap " . c . "gb :" . c . "b\<CR>"
   let c += 1
 endwhile
+let d = 1
+while d <= 99
+  execute "nnoremap " . d . "bd :" . d . "bd\<CR>"
+  let d += 1
+endwhile
+
 set viminfo^=%
 
