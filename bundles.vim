@@ -25,7 +25,6 @@ Bundle 'tomtom/tlib_vim'
 "------ folding -------
 " Bundle 'Efficient-python-folding'
 
-
 "-----------------
 " Fast navigation
 "-----------------
@@ -33,6 +32,8 @@ Bundle 'edsono/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'MattesGroeger/vim-bookmarks'
 Plugin 'unblevable/quick-scope'
+Bundle 'tacahiroy/ctrlp-funky'
+
 
 "--------------
 " Fast editing
