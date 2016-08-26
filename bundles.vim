@@ -32,6 +32,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'MattesGroeger/vim-bookmarks'
+Plugin 'unblevable/quick-scope'
 
 "--------------
 " Fast editing
