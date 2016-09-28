@@ -115,5 +115,6 @@ Bundle 'Lokaltog/vim-distinguished'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'fisadev/fisa-vim-colorscheme'
 Bundle 'Pychimp/vim-luna'
+Bundle 'fatih/molokai'
 
 filetype plugin indent on     " required!

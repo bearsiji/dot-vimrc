@@ -31,7 +31,7 @@ let mapleader = ','
 "--------
 " color scheme
 set background=dark
-color Tomorrow-Night-Eighties
+color distinguished
 if &diff
     colorscheme distinguished
 endif
@@ -223,15 +223,17 @@ imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 
 " Enable omni completion.
+" autocmd FileType go setlocal omnifunc=gocomplete#Complete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
+let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
 
 " SuperTab
 " let g:SuperTabDefultCompletionType='context'
@@ -336,7 +338,7 @@ au FileType go nmap <leader>i <Plug>(go-info)
 " au FileType go nmap <leader>d <Plug>(go-doc)
 " au FileType go nmap <leader>v <Plug>(go-doc-vertical)
 au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>bd <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <leader>ds <Plug>(go-def-split)
@@ -361,7 +363,6 @@ vnoremap <C-c> "*y"
 
 highlight BookmarkSign ctermbg=NONE ctermfg=160
 highlight BookmarkLine ctermbg=194 ctermfg=NONE
-" let g:bookmark_sign = ''
 let g:bookmark_highlight_lines = 1
 
 " let g:bookmark_no_default_key_mappings = 1
@@ -389,6 +390,7 @@ nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."
 " \l       : list buffers
 " \b \f \g : go back/forward/last-used
 " \1 \2 \3 : go to buffer 1/2/3 etc
+" \d1 \d2 \d3 : close buffer 1/2/3 etc
 nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>- :bp<CR>
 nnoremap <Leader>= :bn<CR>
@@ -447,3 +449,7 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting = 0
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
+
