@@ -1,5 +1,4 @@
 silent !stty -ixon > /dev/null 2>/dev/null
-
 source ~/.vim/bundles.vim
 
 "jedi-vim config
@@ -30,12 +29,17 @@ let mapleader = ','
 " Vim UI
 "--------
 " color scheme
-set background=dark
-color distinguished
-if &diff
-    colorscheme distinguished
+" set background=dark
+syntax enable
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
 endif
 
+" colorscheme solarized
+colorscheme molokai
 
 " status line
 if !exists('g:airline_symbols')
