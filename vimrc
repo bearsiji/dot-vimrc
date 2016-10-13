@@ -1,20 +1,6 @@
 silent !stty -ixon > /dev/null 2>/dev/null
 source ~/.vim/bundles.vim
 
-"jedi-vim config
-let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>g"
-" let g:jedi#goto_definitions_command = ""
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>u"
-let g:jedi#completions_command = "<leader>c"
-let g:jedi#rename_command = "<leader>n"
-let g:jedi#completions_enabled = 1
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#use_splits_not_buffers = "winwidth"
-let g:jedi#popup_select_first = 1
-
-
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
@@ -333,27 +319,40 @@ if has("gui_running")
     map <D-0> :tablast<CR>
 endif
 
+"jedi-vim config
+let g:jedi#goto_command = "<leader>g"
+let g:jedi#goto_assignments_command = "<leader>s"
+" let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>u"
+let g:jedi#completions_command = "<leader>c"
+let g:jedi#rename_command = "<leader>n"
+let g:jedi#completions_enabled = 1
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#use_splits_not_buffers = "winwidth"
+let g:jedi#popup_select_first = 1
 
 " vim-go custom mappings
-let g:go_fmt_command = "goimports"
-
-au FileType go nmap <leader>s <Plug>(go-implements)
-au FileType go nmap <leader>i <Plug>(go-info)
-" au FileType go nmap <leader>d <Plug>(go-doc)
-" au FileType go nmap <leader>v <Plug>(go-doc-vertical)
 au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>bd <Plug>(go-build)
+au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <leader>ds <Plug>(go-def-split)
-au FileType go nmap <leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <leader>dt <Plug>(go-def-tab)
+
+au FileType go nmap <leader>i <Plug>(go-implements)
+" au FileType go nmap <leader>i <Plug>(go-info)
+
+au FileType go nmap <leader>g <Plug>(go-def)
+au FileType go nmap <leader>d <Plug>(go-describe)
+" au FileType go nmap <leader>ds <Plug>(go-def-split)
+" au FileType go nmap <leader>dv <Plug>(go-def-vertical)
+" au FileType go nmap <leader>dt <Plug>(go-def-tab)
 au FileType go nmap <leader>n <Plug>(go-rename)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>o <Plug>(go-doc)
+" au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+" au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
-
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -371,14 +370,14 @@ let g:bookmark_highlight_lines = 1
 
 " let g:bookmark_no_default_key_mappings = 1
 nmap <F12> <Plug>BookmarkToggle
-nmap <Leader>bi <Plug>BookmarkAnnotate
-nmap <Leader>ba <Plug>BookmarkShowAll
-nmap <Leader>bj <Plug>BookmarkNext
-nmap <Leader>bk <Plug>BookmarkPrev
-nmap <Leader>bc <Plug>BookmarkClear
-nmap <Leader>bx <Plug>BookmarkClearAll
-" nmap <Leader>bkk <Plug>BookmarkMoveUp
-" nmap <Leader>bjj <Plug>BookmarkMoveDown
+nmap <Leader>mi <Plug>BookmarkAnnotate
+nmap <Leader>ma <Plug>BookmarkShowAll
+nmap <Leader>mj <Plug>BookmarkNext
+nmap <Leader>mk <Plug>BookmarkPrev
+nmap <Leader>mc <Plug>BookmarkClear
+nmap <Leader>mx <Plug>BookmarkClearAll
+" nmap <Leader>mkk <Plug>BookmarkMoveUp
+" nmap <Leader>mjj <Plug>BookmarkMoveDown
 
 
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
