@@ -57,7 +57,10 @@ set smartcase
 " editor settings
 set history=1000
 set nocompatible
-set nofoldenable                                                  " disable folding"
+set nofoldenable
+set foldmethod=syntax
+nnoremap <space> za
+
 set confirm                                                       " prompt when existing from an unsaved file
 set nospell
 set backspace=indent,eol,start                                    " More powerful backspacing
@@ -187,7 +190,7 @@ let g:doxygenToolkit_briefTag_funcName="yes"
 map <F7>a :DoxAuthor<CR>
 map <F7>f :Dox<CR>
 map <F7>b :DoxBlock<CR>
-map <F7>c O/** */<Left><Left><CR>
+map <F7>c O//<Left><Left><CR>
 
 nnoremap <C-q> :q<CR>
 nnoremap <C-a> :qa<CR>
@@ -329,7 +332,7 @@ let g:jedi#completions_command = "<leader>c"
 let g:jedi#rename_command = "<leader>n"
 let g:jedi#completions_enabled = 1
 let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#use_splits_not_buffers = "winwidth"
+let g:jedi#use_splits_not_buffers = ""
 let g:jedi#popup_select_first = 1
 
 " vim-go custom mappings
@@ -342,7 +345,7 @@ au FileType go nmap <leader>i <Plug>(go-implements)
 " au FileType go nmap <leader>i <Plug>(go-info)
 
 au FileType go nmap <leader>g <Plug>(go-def)
-au FileType go nmap <leader>d <Plug>(go-describe)
+au FileType go nmap <leader>s <Plug>(go-describe)
 " au FileType go nmap <leader>ds <Plug>(go-def-split)
 " au FileType go nmap <leader>dv <Plug>(go-def-vertical)
 " au FileType go nmap <leader>dt <Plug>(go-def-tab)
@@ -409,6 +412,7 @@ nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 nnoremap <Leader>` :BufExplorer<CR>
+nnoremap <Leader>dd :bd<CR>
 nnoremap <Leader>d1 :1bd<CR>
 nnoremap <Leader>d2 :2bd<CR>
 nnoremap <Leader>d3 :3bd<CR>
@@ -456,3 +460,7 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<>>
+
+let g:SimpylFold_docstring_preview = 1

@@ -13,7 +13,7 @@ Bundle 'gmarik/vundle'
 "------------------
 Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/emmet-vim'
-Bundle 'Raimondi/delimitMate'
+" Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 " snippets
 Bundle 'garbas/vim-snipmate'
@@ -48,6 +48,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 "--------------
 " IDE features
 "--------------
+Plugin 'tmhedberg/SimpylFold'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
@@ -83,6 +84,7 @@ Bundle 'nono/jquery.vim'
 " Bundle 'groenewege/vim-less'
 " Bundle 'wavded/vim-stylus'
 " Bundle 'nono/vim-handlebars'
+
 
 "------- markup language -------
 Bundle 'tpope/vim-markdown'
