@@ -24,6 +24,7 @@ Bundle 'tomtom/tlib_vim'
 
 "------ folding -------
 " Bundle 'Efficient-python-folding'
+Plugin 'tmhedberg/SimpylFold'
 
 "-----------------
 " Fast navigation
@@ -48,7 +49,6 @@ Bundle 'nathanaelkane/vim-indent-guides'
 "--------------
 " IDE features
 "--------------
-Plugin 'tmhedberg/SimpylFold'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
@@ -99,6 +99,7 @@ Bundle 'fatih/vim-go'
 
 "------- Python ----------
 Bundle 'davidhalter/jedi-vim'
+Bundle 'tell-k/vim-autopep8'
 
 "------- FPs ------
 Bundle 'kien/rainbow_parentheses.vim'
