@@ -16,7 +16,9 @@ Bundle 'mattn/emmet-vim'
 " Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 " snippets
-Bundle 'garbas/vim-snipmate'
+
+Bundle 'SirVer/ultisnips'
+" Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 "------ snipmate dependencies -------
 Bundle 'MarcWeber/vim-addon-mw-utils'
