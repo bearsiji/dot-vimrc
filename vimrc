@@ -200,37 +200,16 @@ nnoremap <C-a> :qa<CR>
 let g:user_emmet_expandabbr_key='<C-j>'
 
 
-" " NeoComplCache
-" let g:neocomplcache_enable_at_startup=1
-" let g:neoComplcache_disableautocomplete=0
-" "let g:neocomplcache_enable_underbar_completion = 1
-" "let g:neocomplcache_enable_camel_case_completion = 1
-" let g:neocomplcache_enable_smart_case=1
-" let g:neocomplcache_min_syntax_length = 3
-" let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 set completeopt-=preview
 
-" imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-" smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-" imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-" smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-
-" " Enable omni completion.
-" autocmd FileType go setlocal omnifunc=gocomplete#Complete
-" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-" autocmd FileType c setlocal omnifunc=ccomplete#Complete
-" if !exists('g:neocomplcache_omni_patterns')
-  " let g:neocomplcache_omni_patterns = {}
-" endif
-" let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
-" let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
+set ofu=syntaxcomplete#Complete
 
 " SuperTab
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabRetainCompletionType=2
+let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
@@ -333,6 +312,7 @@ let g:jedi#completions_enabled = 1
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = ""
 let g:jedi#popup_select_first = 1
+
 
 " vim-go custom mappings
 au FileType go nmap <leader>r <Plug>(go-run)
@@ -470,3 +450,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" use ` to call omni completion
+imap <silent> ` <C-X><C-O>
