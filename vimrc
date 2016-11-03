@@ -229,8 +229,7 @@ set completeopt-=preview
 " let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
 
 " SuperTab
-let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabRetainCompletionType=2
 
 " ctrlp
