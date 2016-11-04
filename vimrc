@@ -461,6 +461,6 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 
 autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<>>
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
 let g:SimpylFold_docstring_preview = 1
