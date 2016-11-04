@@ -466,4 +466,11 @@ let g:SimpylFold_docstring_preview = 1
 
 " use ` to call omni completion
 imap <silent> ` <C-X><C-O>
-" let g:UltiSnipsUsePythonVersion = 2
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-f>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
