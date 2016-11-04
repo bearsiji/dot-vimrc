@@ -235,7 +235,6 @@ let g:SuperTabRetainCompletionType=2
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
     \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',

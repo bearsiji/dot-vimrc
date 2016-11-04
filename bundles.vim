@@ -1,12 +1,14 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 "------------------
 " Code Completions
@@ -29,7 +31,6 @@ Plugin 'tmhedberg/SimpylFold'
 "-----------------
 " Fast navigation
 "-----------------
-Bundle 'edsono/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'MattesGroeger/vim-bookmarks'
 Plugin 'unblevable/quick-scope'
@@ -120,4 +121,18 @@ Bundle 'fisadev/fisa-vim-colorscheme'
 Bundle 'Pychimp/vim-luna'
 Bundle 'fatih/molokai'
 
-filetype plugin indent on     " required!
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
