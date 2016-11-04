@@ -463,3 +463,7 @@ autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
 let g:SimpylFold_docstring_preview = 1
+
+" use ` to call omni completion
+imap <silent> ` <C-X><C-O>
+" let g:UltiSnipsUsePythonVersion = 2
