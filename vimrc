@@ -528,7 +528,7 @@ autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 let g:SimpylFold_docstring_preview = 1
 
 " use ` to call omni completion
-imap <silent> ` <C-X><C-O>
+" imap <silent> ` <C-X><C-O>
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-f>"
